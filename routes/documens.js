@@ -72,7 +72,7 @@ router.put('/:id', verifyToken, async (req, res) => {
             return res.status(404).json({ message: 'Document not found' });
         }
 
-        // Ensure the user owns the document
+        
         if (document.owner.toString() !== req.user.id) {
             return res.status(403).json({ message: 'Access denied' });
         }
