@@ -1,32 +1,32 @@
 const mongoose = require('mongoose');
 
-// Define the user schema
+
 const userSchema = new mongoose.Schema(
   {
     name: {
       type: String,
-      required: [true, 'Name is required'], // Custom error message
-      trim: true, // Remove extra spaces
+      required: [true, 'Name is required'], 
+      trim: true, 
     },
     email: {
       type: String,
       required: [true, 'Email is required'],
-      unique: true, // Ensure emails are unique
-      lowercase: true, // Convert email to lowercase for consistency
-      match: [/\S+@\S+\.\S+/, 'Invalid email format'], // Basic email validation
+      unique: true, 
+      lowercase: true, 
+      match: [/\S+@\S+\.\S+/, 'Invalid email format'], 
     },
     password: {
       type: String,
       required: [true, 'Password is required'],
-      minlength: [6, 'Password must be at least 6 characters long'], // Minimum password length
+      minlength: [6, 'Password must be at least 6 characters long'], 
     },
     createdAt: {
       type: Date,
-      default: Date.now, // Automatically set the creation date
+      default: Date.now, 
     },
   },
   {
-    timestamps: true, // Adds `createdAt` and `updatedAt` fields
+    timestamps: true, 
   }
 );
 
