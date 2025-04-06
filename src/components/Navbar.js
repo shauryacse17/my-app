@@ -110,7 +110,7 @@ const styles = {
         alignItems: 'center',
     },
     activeLink: {
-        backgroundColor: '#0056b3', // Highlight color for active link
+        backgroundColor: '#0056b3',  
         color: '#fff',
     },
     icon: {
